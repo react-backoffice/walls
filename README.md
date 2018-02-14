@@ -1,4 +1,6 @@
 # Walls
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdrublic%2Fwalls.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdrublic%2Fwalls?ref=badge_shield)
+
 
 Walls is a [`react-router-dom`](https://reacttraining.com/react-router/)
 implementation that builds upon configuration.
@@ -28,3 +30,6 @@ Walls is the main routing component
 ## License
 
 This framework is licensed under [MIT](./LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdrublic%2Fwalls.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdrublic%2Fwalls?ref=badge_large)
