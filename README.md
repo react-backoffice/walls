@@ -27,9 +27,15 @@ Walls is the main routing component
 * `isAuthorized: boolean`, is current user authorized
 * `onUnauthorized: function`, if not authorized, do this
 
+### Route
+
+* `private: boolean`, Is this route protected?
+* `exact: boolean`, Should the path match exactly?
+* `path: string`, path to this route
+* `render: function`, a rendering function
+
 ## License
 
 This framework is licensed under [MIT](./LICENSE)
-
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdrublic%2Fwalls.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdrublic%2Fwalls?ref=badge_large)
