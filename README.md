@@ -1,6 +1,6 @@
 # Walls
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdrublic%2Fwalls.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdrublic%2Fwalls?ref=badge_shield)
 
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdrublic%2Fwalls.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdrublic%2Fwalls?ref=badge_shield)
 
 Walls is a [`react-router-dom`](https://reacttraining.com/react-router/)
 implementation that builds upon configuration.
@@ -16,6 +16,20 @@ If you use yarn, just run the following command in your project’s root directo
 Or using npm:
 
     npm install --save walls
+
+### With React
+
+```javascript
+import routes from './routes'
+
+const MyApp = ({ isAuthorized, onUnauthorized }) => (
+  <Walls
+    routes={routes}
+    isAuthorized={isAuthorized}
+    onUnauthorized={onUnauthorized}
+  />
+)
+```
 
 ## Walls Component
 
