@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 
 import PrivateRoute from './PrivateRoute'
+import RouteTranstionGroup from './RouteTransitionGroup'
 
 class Walls extends React.PureComponent {
   static propTypes = {
@@ -42,7 +43,7 @@ class Walls extends React.PureComponent {
 
           <Switch>
             {routes.map((route) => {
-              const { private: privateRoute, ...props } = route
+              const { private: privateRoute, render, ...props } = route
               const key = `route-${(Math.random() * 10000).toFixed(4)}`
 
               if (privateRoute) {
@@ -51,6 +52,12 @@ class Walls extends React.PureComponent {
                     key={key}
                     isAuthorized={isAuthorized}
                     onUnauthorized={onUnauthorized}
+                    render={newProps => (
+                      <RouteTranstionGroup
+                        {...newProps}
+                        render={render}
+                      />
+                    )}
                     {...props}
                   />
                 )
@@ -59,6 +66,12 @@ class Walls extends React.PureComponent {
               return (
                 <Route
                   key={key}
+                  render={newProps => (
+                    <RouteTranstionGroup
+                      {...newProps}
+                      render={render}
+                    />
+                  )}
                   {...props}
                 />
               )
