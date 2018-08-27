@@ -13,7 +13,10 @@ class Walls extends React.PureComponent {
     routes: PropTypes.arrayOf(PropTypes.shape({
       private: PropTypes.bool,
       exact: PropTypes.bool,
-      path: PropTypes.string,
+      path: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string),
+      ]),
       render: PropTypes.func,
     })).isRequired,
     isAuthorized: PropTypes.bool,
