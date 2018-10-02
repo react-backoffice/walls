@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 
 import PrivateRoute from './PrivateRoute'
-import RouteTranstionGroup from './RouteTransitionGroup'
+import RouteTransitionGroup from './RouteTransitionGroup'
 
 class Walls extends React.PureComponent {
   static propTypes = {
@@ -41,46 +41,47 @@ class Walls extends React.PureComponent {
 
     return (
       <Router>
-        <Fragment>
-          {children}
+        <Route
+          render={({ location }) => (
+            <Fragment>
+              {children}
 
-          <Switch>
-            {routes.map((route) => {
-              const { private: privateRoute, render, ...props } = route
-              const key = `route-${(Math.random() * 10000).toFixed(4)}`
+              <RouteTransitionGroup location={location}>
+                <Switch location={location}>
+                  {routes.map((route) => {
+                    const {
+                      private: privateRoute,
+                      render,
+                      ...props
+                    } = route
+                    const key = route.path
 
-              if (privateRoute) {
-                return (
-                  <PrivateRoute
-                    key={key}
-                    isAuthorized={isAuthorized}
-                    onUnauthorized={onUnauthorized}
-                    render={newProps => (
-                      <RouteTranstionGroup
-                        {...newProps}
+                    if (privateRoute) {
+                      return (
+                        <PrivateRoute
+                          key={key}
+                          isAuthorized={isAuthorized}
+                          onUnauthorized={onUnauthorized}
+                          render={render}
+                          {...props}
+                        />
+                      )
+                    }
+
+                    return (
+                      <Route
+                        key={key}
                         render={render}
+                        {...props}
                       />
-                    )}
-                    {...props}
-                  />
-                )
-              }
+                    )
+                  })}
+                </Switch>
+              </RouteTransitionGroup>
 
-              return (
-                <Route
-                  key={key}
-                  render={newProps => (
-                    <RouteTranstionGroup
-                      {...newProps}
-                      render={render}
-                    />
-                  )}
-                  {...props}
-                />
-              )
-            })}
-          </Switch>
-        </Fragment>
+            </Fragment>
+          )}
+        />
       </Router>
     )
   }

@@ -5,6 +5,31 @@
   <title></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    .walls-wrapper {
+      position: relative;
+    }
+
+    .walls-element-enter,
+    .walls-element-enter-done {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      margin: 0;
+    }
+
+    .walls-element-enter {
+      opacity: 0;
+    }
+
+    .walls-element-enter.walls-element-enter-active {
+      opacity: 1;
+      transition: opacity 250ms ease-in;
+    }
+  </style>
 </head>
 
 <body>

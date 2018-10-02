@@ -1,31 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import TransitionGroup from 'react-transition-group/TransitionGroup'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
-import AnimatedWrapper from './AnimatedWrapper'
+const RouteTransitionGroup = ({
+  location,
+  children,
+}) => (
+  <TransitionGroup
+    className="walls-wrapper"
+  >
+    <CSSTransition key={location.key} classNames="walls-element" timeout={300}>
+      {children}
+    </CSSTransition>
+  </TransitionGroup>
+)
 
-const RouteTranstionGroup = ({ match, render, ...rest }) => {
-  const firstChild = (newProps) => {
-    const childrenArray = React.Children.toArray(newProps.children)
-    return childrenArray[0] || null
-  }
-
-  const AnimatedComponent = AnimatedWrapper(() => (
-    render(rest)
-  ))
-
-  return (
-    <TransitionGroup component={firstChild}>
-      {match && (
-        <AnimatedComponent {...rest} />
-      )}
-    </TransitionGroup>
-  )
+RouteTransitionGroup.propTypes = {
+  location: PropTypes.objectOf(PropTypes.any).isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+  ]).isRequired,
 }
 
-RouteTranstionGroup.propTypes = {
-  match: PropTypes.objectOf(PropTypes.any).isRequired,
-  render: PropTypes.func.isRequired,
-}
-
-export default RouteTranstionGroup
+export default RouteTransitionGroup
