@@ -1,6 +1,6 @@
 {
   "name": "walls",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/walls.js",
   "author": "Hans Christian Reinl <info@drublic.de>",
   "license": "MIT",
