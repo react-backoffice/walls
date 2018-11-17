@@ -18,7 +18,7 @@ Or using npm:
 
     npm install --save walls
 
-### With React
+### Using with your React-Component
 
 ```javascript
 import routes from './routes'
@@ -30,6 +30,37 @@ const MyApp = ({ isAuthorized, onUnauthorized }) => (
     onUnauthorized={onUnauthorized}
   />
 )
+```
+
+### Routes file
+
+You can write a roules config that looks like this (`rotes.jsx`):
+
+```javascript
+import React from 'react'
+
+export default [{
+  private: false,
+  exact: true,
+  path: '/',
+  render: () => (
+    <p>Home</p>
+  ),
+}, {
+  private: false,
+  exact: true,
+  path: '/foo',
+  render: () => (
+    <p>Foo</p>
+  ),
+}, {
+  private: false,
+  exact: true,
+  path: '/bar',
+  render: () => (
+    <p>Bar</p>
+  ),
+}]
 ```
 
 ## Walls Component
