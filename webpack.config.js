@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const defaultPath = '__tests__/visual/'
 
 module.exports = {
+  mode: 'development',
   entry: {
     app: [
       'babel-polyfill',
@@ -16,6 +17,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, defaultPath, 'dist/'),
     filename: '[name].js',
+    libraryTarget: 'umd',
     publicPath: '/static/',
   },
   devServer: {
