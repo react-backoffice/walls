@@ -49,6 +49,16 @@ Walls is the main routing component
 * `path: string`, path to this route
 * `render: function`, a rendering function
 
+## React Router Functions
+
+You can use these React Router functions via Walls:
+
+* `Link`
+* `NavLink`
+* `Redirect`
+* `matchPath`
+* `withRouter`
+
 ## License
 
 This framework is licensed under [MIT](./LICENSE)
