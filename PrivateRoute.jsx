@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 
 const PrivateRoute = ({
   isAuthorized,
@@ -8,7 +8,7 @@ const PrivateRoute = ({
   ...props
 }) => {
   if (!isAuthorized) {
-    onUnauthorized()
+    onUnauthorized(props)
 
     return null
   }
@@ -28,4 +28,4 @@ PrivateRoute.defaultProps = {
   onUnauthorized: () => {},
 }
 
-export default PrivateRoute
+export default withRouter(PrivateRoute)

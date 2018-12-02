@@ -15,10 +15,10 @@ export default [{
     <p>Foo</p>
   ),
 }, {
-  private: false,
+  private: true,
   exact: true,
   path: '/bar',
   render: () => (
-    <p>Bar</p>
+    <p>Bar (Private)</p>
   ),
 }]

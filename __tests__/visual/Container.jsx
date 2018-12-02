@@ -11,7 +11,7 @@ const Container = () => (
       <ul>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/foo">Foo</NavLink></li>
-        <li><NavLink to="/bar">Bar</NavLink></li>
+        <li><NavLink to="/bar">Bar (Private)</NavLink></li>
       </ul>
     </nav>
   </Walls>
