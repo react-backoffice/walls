@@ -3,6 +3,7 @@
   "version": "1.2.0",
   "main": "dist/walls.js",
   "module": "dist/walls.js",
+  "typings": "index.d.ts",
   "author": "Hans Christian Reinl <info@drublic.de>",
   "license": "MIT",
   "scripts": {
@@ -25,6 +26,8 @@
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
+    "@types/react": "^16.7.11",
+    "@types/react-router-dom": "^4.3.1",
     "babel-core": "^6.26.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
