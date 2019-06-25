@@ -7,7 +7,7 @@
   "author": "Hans Christian Reinl <info@drublic.de>",
   "license": "MIT",
   "scripts": {
-    "start": "yarn server",
+    "start": "yarn start:dev",
     "start:dev": "webpack-dev-server",
     "js:lint": "eslint **/*.{js,jsx}",
     "js:build": "webpack --config webpack-production.config.js",
