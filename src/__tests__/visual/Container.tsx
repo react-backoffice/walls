@@ -1,11 +1,11 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { ReactElement } from "react";
+import { NavLink } from "react-router-dom";
 
-import Walls from '../../index'
+import Walls from "../../../index";
 
-import routes from './routes'
+import routes from "./routes";
 
-const Container = () => (
+const Container = (): ReactElement => (
   <Walls routes={routes}>
     <nav>
       <ul>
@@ -15,6 +15,6 @@ const Container = () => (
       </ul>
     </nav>
   </Walls>
-)
+);
 
-export default Container
+export default Container;

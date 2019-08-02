@@ -1,24 +1,24 @@
-import React from 'react'
+import React, { ReactElement } from "react";
 
 export default [{
   private: false,
   exact: true,
-  path: '/',
-  render: () => (
+  path: "/",
+  render: (): ReactElement => (
     <p>Home</p>
   ),
 }, {
   private: false,
   exact: true,
-  path: '/foo',
-  render: () => (
+  path: "/foo",
+  render: (): ReactElement => (
     <p>Foo</p>
   ),
 }, {
   private: true,
   exact: true,
-  path: '/bar',
-  render: () => (
+  path: "/bar",
+  render: (): ReactElement => (
     <p>Bar (Private)</p>
   ),
-}]
+}];
