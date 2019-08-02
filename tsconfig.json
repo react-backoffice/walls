@@ -2,13 +2,13 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "target": "esnext",
+    "target": "es5",
     "declaration": true,
     "lib": [
       "dom",
