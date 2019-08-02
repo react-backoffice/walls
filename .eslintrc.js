@@ -22,7 +22,7 @@ module.exports = {
     "react/display-name": "off",
 
     // More react
-    "react/jsx-filename-extension": "tsx",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }],
 
     // Rules for ts
     "@typescript-eslint/indent": ["error", 2],
