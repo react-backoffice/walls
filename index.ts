@@ -1,4 +1,5 @@
-export { default, RouteProps } from "./src/Walls";
+import Walls, { RouteProps as RoutePropsWalls } from "./src/Walls";
+
 export {
   Link,
   NavLink,
@@ -6,3 +7,7 @@ export {
   matchPath,
   withRouter,
 } from "react-router-dom";
+
+export type RouteProps = RoutePropsWalls;
+
+export default Walls;
