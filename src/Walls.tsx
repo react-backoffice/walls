@@ -1,5 +1,4 @@
 import React, {
-  Fragment,
   ReactElement,
   FunctionComponent,
   ReactNode,
@@ -26,24 +25,20 @@ interface Props {
 const Walls: FunctionComponent<Props> = ({
   routes,
   isAuthorized = false,
-  onUnauthorized = undefined,
-  children = undefined,
+  onUnauthorized,
+  children,
 }): ReactElement => {
   const PrivateRouteAny = PrivateRoute as any;
 
   return (
     <Router>
-      <Fragment>
+      <>
         {children}
 
         <Switch>
           {routes.map(
             (route: RouteProps): ReactElement => {
-              const {
-                private: privateRoute,
-                id,
-                ...props
-              } = route;
+              const { private: privateRoute, id, ...props } = route;
               const key = `route-${id || (Math.random() * 10000).toFixed(4)}`;
 
               if (privateRoute) {
@@ -57,13 +52,11 @@ const Walls: FunctionComponent<Props> = ({
                 );
               }
 
-              return (
-                <Route key={key} {...props} />
-              );
+              return <Route key={key} {...props} />;
             },
           )}
         </Switch>
-      </Fragment>
+      </>
     </Router>
   );
 };
