@@ -4,21 +4,21 @@ export default [{
   private: false,
   exact: true,
   path: "/",
-  render: (): ReactElement => (
+  render: (): ReactElement<any> => (
     <p>Home</p>
   ),
 }, {
   private: false,
   exact: true,
   path: "/foo",
-  render: (): ReactElement => (
+  render: (): ReactElement<any> => (
     <p>Foo</p>
   ),
 }, {
   private: true,
   exact: true,
   path: "/bar",
-  render: (): ReactElement => (
+  render: (): ReactElement<any> => (
     <p>Bar (Private)</p>
   ),
 }];

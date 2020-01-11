@@ -5,7 +5,7 @@ import Walls from "../../../index";
 
 import routes from "./routes";
 
-const Container = (): ReactElement => (
+const Container = (): ReactElement<any> => (
   <Walls routes={routes}>
     <nav>
       <ul>

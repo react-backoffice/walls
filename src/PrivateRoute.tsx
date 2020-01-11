@@ -10,7 +10,7 @@ const PrivateRoute: FunctionComponent<Props> = ({
   isAuthorized,
   onUnauthorized,
   ...props
-}): ReactElement | null => {
+}): ReactElement<any> | null => {
   if (!isAuthorized) {
     if (typeof onUnauthorized === "function") {
       onUnauthorized(props);

@@ -19,7 +19,7 @@ interface Props {
   routes: RouteProps[];
   isAuthorized?: boolean;
   onUnauthorized?: (props: any) => void;
-  children?: ReactElement;
+  children?: ReactElement<any>;
 }
 
 const Walls: FunctionComponent<Props> = ({
@@ -27,7 +27,7 @@ const Walls: FunctionComponent<Props> = ({
   isAuthorized = false,
   onUnauthorized,
   children,
-}): ReactElement => {
+}): ReactElement<any> => {
   const PrivateRouteAny = PrivateRoute as any;
 
   return (
@@ -37,7 +37,7 @@ const Walls: FunctionComponent<Props> = ({
 
         <Switch>
           {routes.map(
-            (route: RouteProps): ReactElement => {
+            (route: RouteProps): ReactElement<any> => {
               const { private: privateRoute, id, ...props } = route;
               const key = `route-${id || (Math.random() * 10000).toFixed(4)}`;
 
