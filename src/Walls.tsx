@@ -25,7 +25,6 @@ const Walls: FunctionComponent<Props> = ({
   children,
 }): ReactElement<any> => {
   const PrivateRouteAny = PrivateRoute as any;
-
   return (
     <Router>
       <>
@@ -34,8 +33,10 @@ const Walls: FunctionComponent<Props> = ({
         <Switch>
           {routes.map(
             (route: RouteProps): ReactElement<any> => {
-              const { private: privateRoute, id, ...props } = route;
-              const key = `route-${id || (Math.random() * 10000).toFixed(4)}`;
+              const { private: privateRoute, id, path, ...props } = route;
+              const key = `route-${
+                id || path || (Math.random() * 10000).toFixed(4)
+              }`;
 
               if (privateRoute) {
                 return (
