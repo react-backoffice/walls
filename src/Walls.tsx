@@ -1,8 +1,4 @@
-import React, {
-  ReactElement,
-  FunctionComponent,
-  ReactNode,
-} from "react";
+import React, { ReactElement, FunctionComponent, ReactNode } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import PrivateRoute from "./PrivateRoute";

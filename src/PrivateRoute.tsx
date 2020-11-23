@@ -19,9 +19,7 @@ const PrivateRoute: FunctionComponent<Props> = ({
     return null;
   }
 
-  return (
-    <Route {...props} />
-  );
+  return <Route {...props} />;
 };
 
 export default withRouter(PrivateRoute as any);
