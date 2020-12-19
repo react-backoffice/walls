@@ -9,13 +9,13 @@ export interface RouteProps {
   exact?: boolean;
   path?: string | string[];
   render: (props: any) => ReactNode;
+  fallback?: FunctionComponent<any>;
 }
 
 interface Props {
   routes: RouteProps[];
   isAuthorized?: boolean;
   onUnauthorized?: (props: any) => void;
-  children?: ReactElement<any>;
 }
 
 const Walls: FunctionComponent<Props> = ({
@@ -23,8 +23,7 @@ const Walls: FunctionComponent<Props> = ({
   isAuthorized = false,
   onUnauthorized,
   children,
-}): ReactElement<any> => {
-  const PrivateRouteAny = PrivateRoute as any;
+}) => {
   return (
     <Router>
       <>
@@ -32,18 +31,17 @@ const Walls: FunctionComponent<Props> = ({
 
         <Switch>
           {routes.map(
-            (route: RouteProps): ReactElement<any> => {
-              const { private: privateRoute, id, path, ...props } = route;
-              const key = `route-${
-                id || path || (Math.random() * 10000).toFixed(4)
-              }`;
+            (route: RouteProps, index: number): ReactElement<any> => {
+              const { private: privateRoute, id, fallback, ...props } = route;
+              const key = `route-${id || props.path || index}`;
 
               if (privateRoute) {
                 return (
-                  <PrivateRouteAny
+                  <PrivateRoute
                     key={key}
                     isAuthorized={isAuthorized}
                     onUnauthorized={onUnauthorized}
+                    fallback={fallback}
                     {...props}
                   />
                 );

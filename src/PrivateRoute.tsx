@@ -1,25 +1,27 @@
-import React, { FunctionComponent, ReactElement } from "react";
-import { Route, withRouter } from "react-router-dom";
+import React, { FunctionComponent } from "react";
+import { Route } from "react-router-dom";
 
 interface Props {
   isAuthorized: boolean;
-  onUnauthorized: (props: any) => void;
+  onUnauthorized?: (props: any) => void;
+  fallback?: FunctionComponent<any>;
 }
 
 const PrivateRoute: FunctionComponent<Props> = ({
   isAuthorized,
   onUnauthorized,
+  fallback,
   ...props
-}): ReactElement<any> | null => {
+}) => {
   if (!isAuthorized) {
     if (typeof onUnauthorized === "function") {
       onUnauthorized(props);
     }
 
-    return null;
+    return <Route {...props}>{fallback}</Route>;
   }
 
   return <Route {...props} />;
 };
 
-export default withRouter(PrivateRoute as any);
+export default PrivateRoute;
