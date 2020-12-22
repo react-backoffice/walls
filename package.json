@@ -10,12 +10,12 @@
     "start": "concurrently 'yarn ts:build:test' 'yarn server'",
     "server": "http-server ./src/__visual__/",
     "ts:lint": "eslint . --ext ts,tsx",
-    "ts:build": "tsc -p tsconfig.json",
+    "ts:build": "",
     "ts:build:test": "webpack --config src/__visual__/webpack.config.js --watch",
     "lint": "yarn ts:lint",
     "test": "jest",
     "ci": "yarn lint && yarn test",
-    "build": "yarn ts:build",
+    "build": "tsc",
     "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
@@ -27,7 +27,6 @@
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.2",
-    "@types/": "testing-library/jest-dom",
     "@types/enzyme": "^3.10.8",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.19",
