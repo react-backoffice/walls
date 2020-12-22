@@ -3,8 +3,8 @@
 Walls is a [`react-router-dom`](https://reacttraining.com/react-router/)
 implementation that builds upon configuration.
 
-[![Build Status](https://travis-ci.org/drublic/walls.svg?branch=master)](https://travis-ci.org/drublic/walls)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdrublic%2Fwalls.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdrublic%2Fwalls?ref=badge_shield)
+[![Build Status](https://travis-ci.org/react-backoffice/walls.svg?branch=master)](https://travis-ci.org/react-backoffice/walls)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Freact-backoffice%2Fwalls.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Freact-backoffice%2Fwalls?ref=badge_shield)
 
 ## Usage
 
