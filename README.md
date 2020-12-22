@@ -90,6 +90,10 @@ You can use these React Router functions via Walls:
 * `Redirect`
 * `matchPath`
 * `withRouter`
+* `useHistory`
+* `useLocation`
+* `useParams`
+* `useRouteMatch`
 
 ## License
 

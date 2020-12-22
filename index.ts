@@ -6,6 +6,10 @@ export {
   Redirect,
   matchPath,
   withRouter,
+  useHistory,
+  useLocation,
+  useParams,
+  useRouteMatch,
 } from "react-router-dom";
 
 export type RouteProps = RoutePropsWalls;
