@@ -4,7 +4,7 @@ Walls is a [`react-router-dom`](https://reacttraining.com/react-router/)
 implementation that builds upon configuration.
 
 [![Build Status](https://travis-ci.org/react-backoffice/walls.svg?branch=master)](https://travis-ci.org/react-backoffice/walls)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Freact-backoffice%2Fwalls.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Freact-backoffice%2Fwalls?ref=badge_shield)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdrublic%2Fwalls.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdrublic%2Fwalls?ref=badge_shield)
 
 ## Usage
 
@@ -78,7 +78,8 @@ Walls is the main routing component
 * `private: boolean`, Is this route protected?
 * `exact: boolean`, Should the path match exactly?
 * `path: string`, path to this route
-* `render: function`, a rendering function
+* `render: component`, a rendering function
+* `fallback: component`, a rendering function as fallback for private routes
 
 ## React Router Functions
 
