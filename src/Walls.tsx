@@ -12,7 +12,8 @@ export interface RouteProps {
   fallback?: FunctionComponent<any>;
 }
 
-interface Props {
+// export for testing
+export interface Props {
   routes: RouteProps[];
   isAuthorized?: boolean;
   onUnauthorized?: (props: any) => void;

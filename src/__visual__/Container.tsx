@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactElement, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import Walls from "../../../index";
+import Walls from "../../index";
 
 import routes from "./routes";
 
